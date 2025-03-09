@@ -1,5 +1,5 @@
 [workspace.package]
-license = "MIT"
+license = "GPL2"
 version = "25.2.13"
 edition = "2021"
 
