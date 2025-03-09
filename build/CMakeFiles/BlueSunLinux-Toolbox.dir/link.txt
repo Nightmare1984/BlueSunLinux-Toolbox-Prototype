@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBlueSunLinux-Toolbox.a "CMakeFiles/BlueSunLinux-Toolbox.dir/BlueSunLinux-Toolbox.c.o"
+/usr/bin/ranlib libBlueSunLinux-Toolbox.a

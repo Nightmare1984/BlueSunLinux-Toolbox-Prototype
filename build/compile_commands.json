@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/nightmare1984/Documents/BlueSunLinux-Toolbox/build",
+  "command": "/usr/bin/cc   -g -o CMakeFiles/BlueSunLinux-Toolbox.dir/BlueSunLinux-Toolbox.c.o -c /home/nightmare1984/Documents/BlueSunLinux-Toolbox/BlueSunLinux-Toolbox.c",
+  "file": "/home/nightmare1984/Documents/BlueSunLinux-Toolbox/BlueSunLinux-Toolbox.c",
+  "output": "CMakeFiles/BlueSunLinux-Toolbox.dir/BlueSunLinux-Toolbox.c.o"
+}
+]
