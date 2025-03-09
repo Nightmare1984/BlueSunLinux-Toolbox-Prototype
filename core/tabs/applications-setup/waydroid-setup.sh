@@ -30,37 +30,6 @@ installWaydroid() {
                 "$AUR_HELPER" -S --needed --noconfirm binder_linux-dkms
                 "$ESCALATION_TOOL" modprobe binder-linux device=binder,hwbinder,vndbinder
                 ;;
-            apt-get | nala)
-                curl https://repo.waydro.id | "$ESCALATION_TOOL" sh
-                "$ESCALATION_TOOL" "$PACKAGER" install -y waydroid
-                if command_exists dkms; then
-                    "$ESCALATION_TOOL" "$PACKAGER" install -y git
-                    mkdir -p "$HOME/.local/share/"
-                    git clone https://github.com/choff/anbox-modules.git "$HOME/.local/share/anbox-modules"
-                    cd "$HOME/.local/share/anbox-modules"
-                    "$ESCALATION_TOOL" cp anbox.conf /etc/modules-load.d/
-                    "$ESCALATION_TOOL" cp 99-anbox.rules /lib/udev/rules.d/
-                    "$ESCALATION_TOOL" cp -rT ashmem /usr/src/anbox-ashmem-1
-                    "$ESCALATION_TOOL" cp -rT binder /usr/src/anbox-binder-1
-                    "$ESCALATION_TOOL" dkms install anbox-ashmem/1
-                    "$ESCALATION_TOOL" dkms install anbox-binder/1
-                fi
-                ;;
-            dnf)
-                "$ESCALATION_TOOL" "$PACKAGER" install -y waydroid
-                if command_exists dkms; then
-                    "$ESCALATION_TOOL" "$PACKAGER" install -y git
-                    mkdir -p "$HOME/.local/share/"
-                    git clone https://github.com/choff/anbox-modules.git "$HOME/.local/share/anbox-modules"
-                    cd "$HOME/.local/share/anbox-modules"
-                    "$ESCALATION_TOOL" cp anbox.conf /etc/modules-load.d/
-                    "$ESCALATION_TOOL" cp 99-anbox.rules /lib/udev/rules.d/
-                    "$ESCALATION_TOOL" cp -rT ashmem /usr/src/anbox-ashmem-1
-                    "$ESCALATION_TOOL" cp -rT binder /usr/src/anbox-binder-1
-                    "$ESCALATION_TOOL" dkms install anbox-ashmem/1
-                    "$ESCALATION_TOOL" dkms install anbox-binder/1
-                fi
-                ;;
             *)
                 printf "%b\n" "${RED}Unsupported package manager: $PACKAGER${RC}"
                 exit 1

@@ -9,9 +9,6 @@ installLynx() {
             pacman)
                 "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm lynx
                 ;;
-            apk)
-                "$ESCALATION_TOOL" "$PACKAGER" add lynx
-                ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y lynx
                 ;;

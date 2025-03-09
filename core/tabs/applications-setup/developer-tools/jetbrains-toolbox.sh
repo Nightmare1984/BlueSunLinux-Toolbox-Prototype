@@ -28,9 +28,6 @@ installJetBrainsToolBox() {
             pacman)
                 "$AUR_HELPER" -S --needed --noconfirm jetbrains-toolbox
                 ;;
-            dnf)
-                manualInstall
-                ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y libfuse2
                 manualInstall

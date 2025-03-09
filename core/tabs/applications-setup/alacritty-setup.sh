@@ -9,9 +9,6 @@ installAlacritty() {
             pacman)
                 "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm alacritty
                 ;;
-            apk)
-                "$ESCALATION_TOOL" "$PACKAGER" add alacritty
-                ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y alacritty
                 ;;

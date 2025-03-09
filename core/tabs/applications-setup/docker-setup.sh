@@ -23,28 +23,8 @@ choose_installation() {
 install_docker() {
     printf "%b\n" "${YELLOW}Installing Docker...${RC}"
     case "$PACKAGER" in
-        apt-get|nala)
-            curl -fsSL https://get.docker.com | sh 
-            ;;
-        dnf)
-            "$ESCALATION_TOOL" "$PACKAGER" -y install dnf-plugins-core
-            dnf_version=$(dnf --version | head -n 1 | cut -d '.' -f 1)
-            if [ "$dnf_version" -eq 4 ]; then
-                "$ESCALATION_TOOL" "$PACKAGER" config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-            else
-                "$ESCALATION_TOOL" "$PACKAGER" config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
-            fi
-            "$ESCALATION_TOOL" "$PACKAGER" -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin
-            "$ESCALATION_TOOL" systemctl enable --now docker
-            ;;
-        zypper)
-            "$ESCALATION_TOOL" "$PACKAGER" --non-interactive install docker
-            ;;
         pacman)
             "$ESCALATION_TOOL" "$PACKAGER" -S --noconfirm docker
-            ;;
-        apk)
-            "$ESCALATION_TOOL" "$PACKAGER" add docker
             ;;
         *)
             printf "%b\n" "${RED}Unsupported package manager: ""$PACKAGER""${RC}"
@@ -58,27 +38,8 @@ install_docker() {
 install_docker_compose() {
     printf "%b\n" "${YELLOW}Installing Docker Compose...${RC}"
     case "$PACKAGER" in
-        apt-get|nala)
-            "$ESCALATION_TOOL" "$PACKAGER" install -y docker-compose-plugin
-            ;;
-        dnf)
-            "$ESCALATION_TOOL" "$PACKAGER" -y install dnf-plugins-core
-            dnf_version=$(dnf --version | head -n 1 | cut -d '.' -f 1)
-            if [ "$dnf_version" -eq 4 ]; then
-                "$ESCALATION_TOOL" "$PACKAGER" config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-            else
-                "$ESCALATION_TOOL" "$PACKAGER" config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
-            fi
-            "$ESCALATION_TOOL" "$PACKAGER" install -y docker-compose-plugin
-            ;;
-        zypper)
-            "$ESCALATION_TOOL" "$PACKAGER" --non-interactive install docker-compose
-            ;;
         pacman)
             "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm docker-compose
-            ;;
-        apk)
-            "$ESCALATION_TOOL" "$PACKAGER" add docker-cli-compose
             ;;
         *)
             printf "%b\n" "${RED}Unsupported package manager: ""$PACKAGER""${RC}"

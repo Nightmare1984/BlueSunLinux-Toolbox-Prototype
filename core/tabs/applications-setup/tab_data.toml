@@ -9,48 +9,6 @@ description = "Discord is a versatile communication platform for gamers and comm
 script = "communication-apps/discord-setup.sh"
 task_list = "I"
 
-[[data.entries]]
-name = "Jitsi"
-description = "Jitsi Meet is an open-source video conferencing tool that allows users to host and join secure meetings directly from their web browsers without the need for downloads."
-script = "communication-apps/jitsi-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Signal"
-description = "Signal is a privacy-focused messaging app that provides end-to-end encryption for secure text, voice, and video communication."
-script = "communication-apps/signal-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Slack"
-description = "Slack is a collaboration platform designed for team communication, featuring channels, direct messaging, file sharing, and integrations with various productivity tools."
-script = "communication-apps/slack-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Telegram"
-description = "Telegram is a cloud-based messaging app known for its speed and security, offering features like group chats, channels, and end-to-end encrypted calls."
-script = "communication-apps/telegram-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Thunderbird"
-description = "Thunderbird is a free, open-source email client that offers powerful features like customizable email management, a built-in calendar, and extensive add-ons for enhanced functionality."
-script = "communication-apps/thunderbird-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "ZapZap"
-description = "ZapZap is an open source whatsapp desktop client for Linux users developed by rafatosta."
-script = "communication-apps/zapzap-setup.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Zoom"
-description = "Zoom is a widely-used video conferencing platform that allows users to host virtual meetings, webinars, and online collaboration with features like screen sharing and recording."
-script = "communication-apps/zoom-setup.sh"
-task_list = "I"
-
 [[data]]
 name = "Developer Tools"
 
@@ -132,28 +90,6 @@ script = "office-suites/wpsoffice.sh"
 task_list = "I"
 
 [[data]]
-name = "PDF Suites"
-
-[[data.entries]]
-name = "Evince"
-script = "pdf-suites/evince.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Okular"
-script = "pdf-suites/okular.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "PDF Studio"
-script = "pdf-suites/pdfstudio.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "PDF Studio Viewer"
-script = "pdf-suites/pdfstudioviewer.sh"
-
-[[data]]
 name = "Web Browsers"
 
 [[data.entries]]
@@ -163,33 +99,9 @@ script = "browsers/brave.sh"
 task_list = "I"
 
 [[data.entries]]
-name = "Chromium"
-description = "Chromium is an open-source web browser project started by Google, to provide the source code for the proprietary Google Chrome browser."
-script = "browsers/chromium.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Google Chrome"
-description = "Google Chrome is a fast, secure, and free web browser, built for the modern web."
-script = "browsers/google-chrome.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "LibreWolf"
-description = "LibreWolf is a fork of Firefox, focused on privacy, security, and freedom."
-script = "browsers/librewolf.sh"
-task_list = "I"
-
-[[data.entries]]
 name = "Lynx"
 description = "Lynx is a highly configurable text-based web browser for use on cursor-addressable character cell terminals."
 script = "browsers/lynx.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Mozilla Firefox"
-description = "Mozilla Firefox is a free and open-source web browser developed by the Mozilla Foundation."
-script = "browsers/firefox.sh"
 task_list = "I"
 
 [[data.entries]]
@@ -208,12 +120,6 @@ task_list = "I"
 name = "Vivaldi"
 description = "Vivaldi is a freeware, cross-platform web browser developed by Vivaldi Technologies."
 script = "browsers/vivaldi.sh"
-task_list = "I"
-
-[[data.entries]]
-name = "Tor Browser"
-description = "Tor Browser is a free and open-source firefox-based web browser designed for anonymity and censorship circumvention."
-script = "browsers/tor-browser.sh"
 task_list = "I"
 
 [[data.entries]]
@@ -300,22 +206,10 @@ description = "kitty is a free and open-source GPU-accelerated terminal emulator
 script = "kitty-setup.sh"
 task_list = "I FM"
 
-[[data]]
-name = "Linutil Installer"
-description = "Installs a distro-specific Linutil package locally."
-script = "linutil-installer.sh"
-task_list = "I"
-
 [[data.preconditions]]
 matches = false
 data = "command_exists"
 values = ["linutil"]
-
-[[data]]
-name = "Linutil Updater"
-description = "Updates your local Linutil crate installation."
-script = "linutil-updater.sh"
-task_list = "I"
 
 [[data.preconditions]]
 matches = true
