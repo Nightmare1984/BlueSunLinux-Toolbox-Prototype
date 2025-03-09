@@ -11,9 +11,6 @@ setupBluetooth() {
             pacman)
                 "$ESCALATION_TOOL" "$PACKAGER" -S --noconfirm bluez-utils
                 ;;
-            apk)
-                "$ESCALATION_TOOL" "$PACKAGER" add bluez
-                ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y bluez
                 ;;

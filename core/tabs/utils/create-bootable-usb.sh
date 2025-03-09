@@ -18,14 +18,8 @@ installDependencies() {
     if ! command_exists ${DEPENDENCIES}; then
         printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
         case "${PACKAGER}" in
-            apt-get|nala)
-                "${ESCALATION_TOOL}" "${PACKAGER}" install -y xz-utils gzip bzip2 jq;;
-            dnf|zypper)
-                "${ESCALATION_TOOL}" "${PACKAGER}" install -y ${DEPENDENCIES};;
             pacman)
                 "${ESCALATION_TOOL}" "${PACKAGER}" -S --noconfirm --needed ${DEPENDENCIES};;
-            apk)
-                "${ESCALATION_TOOL}" "${PACKAGER}" add ${DEPENDENCIES};;
             *)
                 printf "%b\n" "${RED}Unsupported package manager.${RC}"
                 exit 1

@@ -11,9 +11,6 @@ install_package() {
             pacman)
                 "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm "$PACKAGE"
                 ;;
-            apk)
-                "$ESCALATION_TOOL" "$PACKAGER" add "$PACKAGE"
-                ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y "$PACKAGE"
                 ;;
@@ -29,15 +26,7 @@ setup_ssh() {
 
     # Detect package manager and install appropriate SSH package
     case "$PACKAGER" in
-    apt-get|nala)
-        install_package openssh-server
-        SSH_SERVICE="ssh"
-        ;;
     pacman)
-        install_package openssh
-        SSH_SERVICE="sshd"
-        ;;
-    apk)
         install_package openssh
         SSH_SERVICE="sshd"
         ;;
