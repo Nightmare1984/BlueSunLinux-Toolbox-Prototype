@@ -5,15 +5,6 @@
 install_theme_tools() {
     printf "%b\n" "${YELLOW}Installing theme tools (qt6ct and kvantum)...${RC}"
     case "$PACKAGER" in
-        apt-get|nala)
-            "$ESCALATION_TOOL" "$PACKAGER" install -y qt6ct kvantum
-            ;;
-        zypper)
-            "$ESCALATION_TOOL" "$PACKAGER" --non-interactive install qt6ct kvantum
-            ;;
-        dnf)
-            "$ESCALATION_TOOL" "$PACKAGER" install -y qt6ct kvantum
-            ;;
         pacman)
             "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm qt6ct kvantum
             ;;

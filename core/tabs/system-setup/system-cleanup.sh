@@ -6,26 +6,9 @@
 cleanup_system() {
     printf "%b\n" "${YELLOW}Performing system cleanup...${RC}"
     case "$PACKAGER" in
-        apt-get|nala)
-            "$ESCALATION_TOOL" "$PACKAGER" clean
-            "$ESCALATION_TOOL" "$PACKAGER" autoremove -y 
-            "$ESCALATION_TOOL" du -h /var/cache/apt
-            ;;
-        zypper)
-            "$ESCALATION_TOOL" "$PACKAGER" clean -a
-            "$ESCALATION_TOOL" "$PACKAGER" tidy
-            "$ESCALATION_TOOL" "$PACKAGER" cc -a
-            ;;
-        dnf)
-            "$ESCALATION_TOOL" "$PACKAGER" clean all
-            "$ESCALATION_TOOL" "$PACKAGER" autoremove -y
-            ;;
         pacman)
             "$ESCALATION_TOOL" "$PACKAGER" -Sc --noconfirm
             "$ESCALATION_TOOL" "$PACKAGER" -Rns "$(pacman -Qtdq)" --noconfirm > /dev/null || true
-            ;;
-        apk)
-            "$ESCALATION_TOOL" "$PACKAGER" cache clean
             ;;
         *)
             printf "%b\n" "${RED}Unsupported package manager: ${PACKAGER}. Skipping.${RC}"
