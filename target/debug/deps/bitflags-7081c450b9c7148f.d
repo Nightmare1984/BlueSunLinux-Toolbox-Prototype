@@ -1,0 +1,11 @@
+/home/nightmare1984/Documents/GitHub/linutil/target/debug/deps/libbitflags-7081c450b9c7148f.rmeta: /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/lib.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/iter.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/parser.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/traits.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/public.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/internal.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/external.rs
+
+/home/nightmare1984/Documents/GitHub/linutil/target/debug/deps/bitflags-7081c450b9c7148f.d: /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/lib.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/iter.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/parser.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/traits.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/public.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/internal.rs /home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/external.rs
+
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/lib.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/iter.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/parser.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/traits.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/public.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/internal.rs:
+/home/nightmare1984/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.7.0/src/external.rs:
