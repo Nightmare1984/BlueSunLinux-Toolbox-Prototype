@@ -1,6 +1,6 @@
 [package]
 name = "linutil_tui"
-description = "Chris Titus Tech's Linux Toolbox - Linutil is a distro-agnostic toolbox designed to simplify everyday Linux tasks."
+description = "BlueSunLinux Toolbox - Linutil is a distro-agnostic toolbox designed to simplify everyday Linux tasks."
 documentation = "https://christitustech.github.io/linutil"
 readme = "../README.md"
 edition = "2021"
@@ -29,5 +29,5 @@ nix = { version = "0.29.0", features = [ "user" ] }
 vt100-ctt = "0.16.0"
 
 [[bin]]
-name = "linutil"
+name = "BSLT"
 path = "src/main.rs"

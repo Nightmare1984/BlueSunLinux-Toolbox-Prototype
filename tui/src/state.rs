@@ -114,7 +114,7 @@ impl AppState {
             .iter()
             .map(|tab| tab.name.len() + args.theme.tab_icon().len())
             .max()
-            .unwrap_or(22) as u16; // 22 is the length of "Linutil by Chris Titus" title
+            .unwrap_or(22) as u16; // 22 is the length of "BlueSunLinux Toolbox" title
 
         let mut state = Self {
             areas: None,
@@ -203,7 +203,7 @@ impl AppState {
 
             Focus::List => {
                 let mut hints = Vec::new();
-                hints.push(Shortcut::new("Exit linutil", ["q", "CTRL-c"]));
+                hints.push(Shortcut::new("Exit BSLT", ["q", "CTRL-c"]));
 
                 if self.at_root() {
                     hints.push(Shortcut::new("Focus tab list", ["h", "Left"]));
@@ -240,7 +240,7 @@ impl AppState {
             Focus::TabList => (
                 "Tab list",
                 shortcuts!(
-                    ("Exit linutil", ["q", "CTRL-c"]),
+                    ("Exit BSLT", ["q", "CTRL-c"]),
                     ("Focus action list", ["l", "Right", "Enter"]),
                     ("Select item above", ["k", "Up"]),
                     ("Select item below", ["j", "Down"]),
@@ -302,8 +302,8 @@ impl AppState {
         });
 
         let label = Paragraph::new(Line::from(vec![
-            Span::styled("Linutil ", Style::default().bold()),
-            Span::styled("by Chris Titus", Style::default().italic()),
+            Span::styled("BlueSunLinux Toolbox", Style::default().bold()),
+            Span::styled("", Style::default().italic()),
         ]))
         .block(label_block)
         .centered();

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=BSLT
+Comment=Distro-agnostic toolbox designed to simplify everyday Linux tasks
+Exec=sh -c '/usr/bin/BSLT || $HOME/.cargo/bin/BSLT || BSLT'
+Icon=utilities-terminal
+Type=Application
+Terminal=true
+Categories=Utility;
