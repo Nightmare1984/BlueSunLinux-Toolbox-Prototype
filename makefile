@@ -1,7 +1,7 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = `pkg-config --cflags gtk+-3.0`
-LDFLAGS = `pkg-config --libs gtk+-3.0`
+CFLAGS = `pkg-config --cflags`
+LDFLAGS = `pkg-config --libs`
 
 # Source and executable files
 SRC = BlueSunLinux-Toolbox.c

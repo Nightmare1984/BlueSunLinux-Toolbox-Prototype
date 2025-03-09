@@ -1,3 +1,0 @@
-/home/nightmare1984/Documents/BlueSunLinux-Toolbox/build/CMakeFiles/BlueSunLinux-Toolbox.dir
-/home/nightmare1984/Documents/BlueSunLinux-Toolbox/build/CMakeFiles/edit_cache.dir
-/home/nightmare1984/Documents/BlueSunLinux-Toolbox/build/CMakeFiles/rebuild_cache.dir
