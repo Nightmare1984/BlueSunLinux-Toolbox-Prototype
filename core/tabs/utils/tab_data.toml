@@ -187,3 +187,9 @@ name = "WiFi Manager"
 description = "This utility is designed to manage wifi in your system"
 script = "wifi-control.sh"
 task_list = "I SS"
+
+[[data]]
+name = "Kde6 Latency Reducer"
+description = "This utility is designed to reduce latency in Kde6 system's"
+script = "kde6-latency-reducer.sh"
+task_list = "I SS"
