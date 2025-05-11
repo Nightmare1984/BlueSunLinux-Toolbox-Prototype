@@ -24,7 +24,7 @@ const MIN_WIDTH: u16 = 100;
 const MIN_HEIGHT: u16 = 25;
 const FLOAT_SIZE: u16 = 80;
 const CONFIRM_PROMPT_FLOAT_SIZE: u16 = 40;
-const TITLE: &str = concat!(" BlueSunLinux Toolbox - 0.0.3 Alpha");
+const TITLE: &str = concat!(" BlueSunLinux Toolbox - 0.0.4 Alpha");
 const ACTIONS_GUIDE: &str = "List of important tasks performed by commands' names:
 
 D  - disk modifications (ex. partitioning) (privileged)

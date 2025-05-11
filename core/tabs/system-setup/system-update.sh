@@ -3,32 +3,23 @@
 . ../common-script.sh
 
 fastUpdate() {
-    case "$PACKAGER" in
-        pacman)
-            "$AUR_HELPER" -S --needed --noconfirm rate-mirrors-bin
-
-            printf "%b\n" "${YELLOW}Generating a new list of mirrors using rate-mirrors. This process may take a few seconds...${RC}"
-
-            if [ -s "/etc/pacman.d/mirrorlist" ]; then
-                "$ESCALATION_TOOL" cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-            fi
-
-            # If for some reason DTYPE is still unknown use always arch so the rate-mirrors does not fail
-            dtype_local="$DTYPE"
-            if [ "$dtype_local" = "unknown" ]; then
-                dtype_local="arch"
-            fi
-
-            if ! "$ESCALATION_TOOL" rate-mirrors --top-mirrors-number-to-retest=5 --disable-comments --save /etc/pacman.d/mirrorlist --allow-root "$dtype_local" > /dev/null || [ ! -s "/etc/pacman.d/mirrorlist" ]; then
-                printf "%b\n" "${RED}Rate-mirrors failed, restoring backup.${RC}"
-                "$ESCALATION_TOOL" cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
-            fi
-            ;;
-        *)
-            printf "%b\n" "${RED}Unsupported package manager: ${PACKAGER}${RC}"
-            exit 1
-            ;;
-    esac
+    printf "%b\n" "${YELLOW}Automatically updating Arch Linux mirrors for your area.${RC}"
+    if command_exists reflector; then
+        "$ESCALATION_TOOL" reflector --country "$(curl -s https://ipapi.co/country/)" --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+        printf "%b\n" "${GREEN}Mirrors updated successfully for your area.${RC}"
+    else
+        printf "%b\n" "${RED}Reflector is not installed. Please install it to update mirrors.${RC}"
+        exit 1
+    fi
+    printf "%b\n" "${YELLOW}Updating AUR helper mirrors.${RC}"
+    if [ "$AUR_HELPER" = "paru" ] || [ "$AUR_HELPER" = "yay" ]; then
+        "$AUR_HELPER" -Y --gendb
+        "$AUR_HELPER" -Y --topdown
+        printf "%b\n" "${GREEN}AUR helper mirrors updated successfully.${RC}"
+    else
+        printf "%b\n" "${RED}Unsupported AUR helper: ${AUR_HELPER}${RC}"
+        exit 1
+    fi
 }
 
 updateSystem() {
